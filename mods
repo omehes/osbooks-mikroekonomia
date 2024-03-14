@@ -1,0 +1,5 @@
+while read -r filepath; do
+    dirpath="$(dirname "$filepath")"
+    mv "$filepath" "$dirpath.cnxml"
+    rmdir "$dirpath"
+done < <(find modules -name '*.cnxml')
